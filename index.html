@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daiya's | Tradition Deconstructed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0B0D0A; color: #F5F5DC; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        canvas { position: fixed; top: 0; left: 50%; transform: translateX(-50%); height: 100vh; width: auto; z-index: -1; }
+        .section { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; pointer-events: none; }
+        .content-box { max-width: 500px; padding: 2rem; pointer-events: all; }
+        #hero-canvas {
+            position: fixed;
+            top: 0;
+            left: 1;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* This helps with browser-level scaling */
+            z-index: -1;
+            background-color: #0B0D0A;
+        }
+        main::after {
+            content: "";
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20vh;
+            background: linear-gradient(to top, #0B0D0A, transparent);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-[#0B0D0A]">
+        <p class="text-gold animate-pulse">Harvesting Experience...</p>
+    </div>
+
+    <canvas id="hero-canvas"></canvas>
+
+    <main id="main-content">
+        <section class="section">
+            <div class="content-box text-center">
+                <h1 class="text-8xl mb-4 text-[#D4AF37]">Daiya's</h1>
+                <p class="text-xl opacity-80 uppercase tracking-widest">Tradition Deconstructed</p>
+            </div>
+        </section>
+
+        <section class="section justify-start pl-20">
+            <div class="content-box">
+                <h2 class="text-4xl mb-4 text-[#D4AF37]">Pure Extraction</h2>
+                <p class="text-lg opacity-70">Our wood-pressed oil sequence starts with the finest seeds, slowly crushed to preserve every vital nutrient.</p>
+            </div>
+        </section>
+
+        <section class="section justify-end pr-20">
+            <div class="content-box">
+                <h2 class="text-4xl mb-4 text-[#D4AF37]">Golden Integrity</h2>
+                <p class="text-lg opacity-70">No heat. No chemicals. Just the raw, golden essence of nature, captured in high-definition purity.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="content-box text-center bg-[#0B0D0A]/60 backdrop-blur-md border border-white/10 p-12 rounded-lg">
+                <h2 class="text-5xl mb-6 text-[#D4AF37]">Connect with Us</h2>
+                <p class="text-lg opacity-80 mb-8">For bulk orders, distribution inquiries, or to visit our traditional wood-pressing facility.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-10">
+                    <div>
+                        <h4 class="text-[#D4AF37] uppercase tracking-widest text-sm mb-2">Location</h4>
+                        <p class="opacity-70">DAIYA AGRO INDUSTRIES PVT. LTD.<br>BEHIND PRICE SAINIK SCHOOL<br>KANWARPURA ROAD, SIKAR<br>Rajasthan, India</p>
+                    </div>
+                    <div>
+                        <h4 class="text-[#D4AF37] uppercase tracking-widest text-sm mb-2">Inquiries</h4>
+                        <p class="opacity-70">hello@daiyas.com<br>+91 94623 34899</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="mailto:hello@daiyas.com" class="px-8 py-4 bg-[#D4AF37] text-[#0B0D0A] font-bold hover:bg-white transition-all duration-300">
+                        SEND AN EMAIL
+                    </a>
+                    <a href="https://wa.me/+919462334899" class="px-8 py-4 border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-300">
+                        WHATSAPP US
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
