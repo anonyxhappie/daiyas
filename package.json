@@ -1,0 +1,36 @@
+{
+  "name": "daiyas",
+  "version": "1.0.0",
+  "description": "Daiya's Jagdish Brand | Premium Wood-Pressed Cold Pressed Oils",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anonyxhappie/daiyas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anonyxhappie/daiyas/issues"
+  },
+  "homepage": "https://github.com/anonyxhappie/daiyas#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.11",
+    "vite-plugin-pwa": "^1.2.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5"
+  }
+}
