@@ -188,6 +188,22 @@
         <section class="section sr-only">
             <h3 class="sr-only">Traditional Wood-Pressed and Cold-Pressed Mustard Oil and Peanuts Oil</h3>
         </section>
+
+        <footer class="py-10 text-center border-t border-white/5 opacity-40 hover:opacity-100 transition-opacity">
+            <div class="flex justify-center gap-8 text-[10px] uppercase tracking-[0.2em] mb-4">
+                <button onclick="openModal('privacy')" class="hover:text-[#D4AF37]">Privacy Policy</button>
+                <button onclick="openModal('terms')" class="hover:text-[#D4AF37]">Terms of Service</button>
+            </div>
+            <p class="text-[10px] tracking-widest">&copy; 2026 DAIYA AGRO INDUSTRIES PVT. LTD.</p>
+        </footer>
+
+        <div id="legalModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-[#0B0D0A]/95 backdrop-blur-xl p-6">
+            <div class="max-w-2xl w-full bg-[#111] border border-white/10 p-8 rounded-lg max-h-[80vh] overflow-y-auto">
+                <div id="modalContent" class="text-sm leading-relaxed text-white/70"></div>
+                <button onclick="closeModal()" class="mt-8 text-[#D4AF37] uppercase text-xs tracking-widest font-bold">Close</button>
+            </div>
+        </div>
+        
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
