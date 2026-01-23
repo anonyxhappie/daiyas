@@ -15,10 +15,10 @@
         #hero-canvas {
             position: fixed;
             top: 0;
-            left: 1;
+            left: 0; /* Changed from 1 to 0 */
             width: 100vw;
             height: 100vh;
-            object-fit: cover; /* This helps with browser-level scaling */
+            object-fit: cover;
             z-index: -1;
             background-color: #0B0D0A;
         }
@@ -32,6 +32,43 @@
             background: linear-gradient(to top, #0B0D0A, transparent);
             pointer-events: none;
         }
+        img[src$=".svg"] {
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        img[src$=".svg"]:hover {
+            transform: scale(1.05);
+        }
+        .content-box img {
+            width: 100%;
+            max-width: 450px; /* Set your maximum desired size here */
+            height: auto;
+            /* Adding a subtle breathing animation for premium feel */
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .text-gold-metallic {
+            background: linear-gradient(to bottom, #D4AF37 0%, #F5F5DC 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Mobile Adjustment */
+        @media (max-width: 768px) {
+            .content-box img {
+                max-width: 280px;
+            }
+            h1 {
+                font-size: 3.5rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -43,10 +80,27 @@
     <canvas id="hero-canvas"></canvas>
 
     <main id="main-content">
-        <section class="section">
-            <div class="content-box text-center">
-                <h1 class="text-8xl mb-4 text-[#D4AF37]">Daiya's</h1>
+        
+        <!-- <section class="section">
+            <div class="content-box text-center flex flex-col items-center">
+                <img src="assets/logos/Daiyas Logo.png" alt="Jagdish Brand Logo" class="w-80 h-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.2)]">
                 <p class="text-xl opacity-80 uppercase tracking-widest">Tradition Deconstructed</p>
+            </div>
+        </section> -->
+        <section class="section">
+            <div class="content-box text-center flex flex-col items-center group">
+                <div class="relative mb-6">
+                    <img src="assets/logos/Daiyas Logo.png" alt="Jagdish Brand Logo" 
+                        class="w-80 h-auto drop-shadow-[0_0_50px_rgba(212,175,55,0.15)] relative z-10">
+                </div>
+
+                <div class="flex items-center gap-4 w-full">
+                    <div class="h-[1px] flex-grow bg-gradient-to-r from-transparent to-[#D4AF37]/50"></div>
+                    <p class="text-xs md:text-sm font-light uppercase tracking-[0.5em] text-[#D4AF37] whitespace-nowrap opacity-90">
+                        Tradition <span class="font-bold italic">Deconstructed</span>
+                    </p>
+                    <div class="h-[1px] flex-grow bg-gradient-to-l from-transparent to-[#D4AF37]/50"></div>
+                </div>
             </div>
         </section>
 
