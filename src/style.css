@@ -51,10 +51,10 @@ canvas {
 #hero-canvas {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50;
   /* Changed from 1 to 0 */
   width: 100vw;
-  height: 100vh;
+  height: 105vh;
   object-fit: cover;
   z-index: -1;
   background-color: #0B0D0A;

@@ -167,7 +167,21 @@ export function initAnimation() {
         }
 
         context.clearRect(0, 0, canvas.width, canvas.height);
-        context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+
+        // Implementation of 50% horizontal wrap-around shift
+        // Part 1: Draw the right half of the image on the left
+        context.drawImage(
+            img,
+            img.width / 2, 0, img.width / 2, img.height,
+            offsetX, offsetY, drawWidth / 2, drawHeight
+        );
+
+        // Part 2: Draw the left half of the image on the right
+        context.drawImage(
+            img,
+            0, 0, img.width / 2, img.height,
+            offsetX + drawWidth / 2, offsetY, drawWidth / 2, drawHeight
+        );
     }
 
     window.addEventListener("resize", render);
