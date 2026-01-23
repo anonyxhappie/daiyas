@@ -6,7 +6,7 @@ canvas.height = 770;
 
 const frameCount = 147; // Change to your actual number of images
 const currentFrame = index => (
-  `./assets/hero_frames/frame_${(index + 1).toString().padStart(3, '0')}.jpg`
+  `./assets/frames/frame_${(index + 1).toString().padStart(3, '0')}.jpg`
 );
 
 const images = [];
