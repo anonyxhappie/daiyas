@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daiya's | Tradition Deconstructed</title>
+    <title>Daiya's Jagdish Brand | Premium Wood-Pressed Cold Pressed Oils</title>
+    <meta name="description" content="Discover Daiya's Jagdish Brand: Traditional wood-pressed mustard and peanut oils. Experience the deconstructed process of cold-press extraction at our Jagdish Farm facility in Rajasthan.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://daiyas.in/">
+    <meta property="og:title" content="Daiya's Jagdish Brand | Tradition Deconstructed">
+    <meta property="og:description" content="Experience the purity of 100% natural wood-pressed oils. No heat, no chemicals, just tradition.">
+    <meta property="og:image" content="assets/logos/Daiyas Logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
@@ -36,7 +43,6 @@
             filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
             transition: transform 0.3s ease;
         }
-
         img[src$=".svg"]:hover {
             transform: scale(1.05);
         }
@@ -47,14 +53,22 @@
             /* Adding a subtle breathing animation for premium feel */
             animation: float 6s ease-in-out infinite;
         }
-
         .text-gold-metallic {
             background: linear-gradient(to bottom, #D4AF37 0%, #F5F5DC 50%, #D4AF37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
         }
-
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
@@ -70,6 +84,38 @@
             }
         }
     </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Daiya's Jagdish Brand",
+        "image": "assets/logos/Daiyas Logo.png",
+        "description": "Premium wood-pressed oils and organic agricultural products from Rajasthan.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Behind Price Sainik School, Kanwarpura Road",
+            "addressLocality": "Sikar",
+            "addressRegion": "RJ",
+            "postalCode": "332001",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 27.6094,
+            "longitude": 75.1398
+        },
+        "url": "https://daiyas.in",
+        "telephone": "+919462334899",
+        "openingHoursSpecification": [
+            {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "21:00"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
 
@@ -77,16 +123,10 @@
         <p class="text-gold animate-pulse">Harvesting Experience...</p>
     </div>
 
-    <canvas id="hero-canvas"></canvas>
+    <canvas id="hero-canvas" aria-label="A cinematic 3D animation showing a bottle of Daiya's wood-pressed oil deconstructing into its natural components and wooden press mechanism."></canvas>
 
     <main id="main-content">
         
-        <!-- <section class="section">
-            <div class="content-box text-center flex flex-col items-center">
-                <img src="assets/logos/Daiyas Logo.png" alt="Jagdish Brand Logo" class="w-80 h-auto mb-8 drop-shadow-[0_0_30px_rgba(212,175,55,0.2)]">
-                <p class="text-xl opacity-80 uppercase tracking-widest">Tradition Deconstructed</p>
-            </div>
-        </section> -->
         <section class="section">
             <div class="content-box text-center flex flex-col items-center group">
                 <div class="relative mb-6">
@@ -143,6 +183,9 @@
                     </a>
                 </div>
             </div>
+        </section>
+        <section class="section sr-only">
+            <h3 class="sr-only">Traditional Wood-Pressed and Cold-Pressed Mustard Oil and Peanuts Oil</h3>
         </section>
     </main>
 
