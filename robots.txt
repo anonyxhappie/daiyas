@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daiyas.in/sitemap.xml
