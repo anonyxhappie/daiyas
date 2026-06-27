@@ -40,6 +40,7 @@ canvas {
   justify-content: center;
   position: relative;
   pointer-events: none;
+  backdrop-filter: saturate(1.4) brightness(0.8);
 }
 
 .content-box {
