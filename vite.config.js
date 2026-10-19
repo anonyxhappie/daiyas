@@ -7,7 +7,16 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,webp,avif}']
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,avif}'],
+        runtimeCaching: [{
+          urlPattern: /\\/assets\\/frames\\/frame_\\d+\\.jpg$/i,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'daiyas-campaign-frames',
+            expiration: { maxEntries: 12, maxAgeSeconds: 60 * 60 * 24 * 30 },
+            cacheableResponse: { statuses: [0, 200] }
+          }
+        }]
       },
       includeAssets: ['assets/logos/Daiyas Logo.png'],
       manifest: {
