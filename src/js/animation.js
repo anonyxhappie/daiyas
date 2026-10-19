@@ -3,7 +3,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Motion is a progressive enhancement: content and CTAs work without it.
+// Motion is a progressive enhancement: all content and CTAs work without it.
 export function initAnimation() {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const targets = document.querySelectorAll(".product-card, .process-copy, .partner-points > div, .trust-items > div");
