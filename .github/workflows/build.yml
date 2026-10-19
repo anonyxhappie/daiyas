@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - redesign/b2b-premium-heritage
   pull_request:
     branches:
       - main
@@ -12,6 +11,11 @@ on:
 
 permissions:
   contents: read
+
+# Keep only the newest check for a branch/PR in flight.
+concurrency:
+  group: website-build-${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
   build:
