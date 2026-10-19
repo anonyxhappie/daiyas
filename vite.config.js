@@ -7,9 +7,10 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
+        // Avoid precaching every frame in the scroll sequence during first visit.
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,avif}'],
         runtimeCaching: [{
-          urlPattern: /\\/assets\\/frames\\/frame_\\d+\\.jpg$/i,
+          urlPattern: /\/assets\/frames\/frame_\d+\.jpg$/i,
           handler: 'CacheFirst',
           options: {
             cacheName: 'daiyas-campaign-frames',
@@ -26,13 +27,11 @@ export default defineConfig({
         theme_color: '#203c2c',
         background_color: '#f8f4e8',
         display: 'standalone',
-        icons: [
-          {
-            src: 'assets/logos/Daiyas Logo.png',
-            sizes: 'any',
-            type: 'image/png'
-          }
-        ]
+        icons: [{
+          src: 'assets/logos/Daiyas Logo.png',
+          sizes: 'any',
+          type: 'image/png'
+        }]
       }
     })
   ]
