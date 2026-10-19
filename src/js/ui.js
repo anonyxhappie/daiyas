@@ -11,7 +11,6 @@ export function initUI() {
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-label", "Open navigation");
     nav.classList.remove("is-open");
-    document.body.classList.remove("menu-open");
   };
 
   if (toggle && nav) {
@@ -20,7 +19,6 @@ export function initUI() {
       toggle.setAttribute("aria-expanded", String(!expanded));
       toggle.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
       nav.classList.toggle("is-open", !expanded);
-      document.body.classList.toggle("menu-open", !expanded);
     });
     nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
     document.addEventListener("keydown", (event) => {
@@ -37,25 +35,23 @@ export function initUI() {
     });
   });
 
-  if (form) {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-      const data = new FormData(form);
-      const lines = [
-        "Hello Daiya’s team, I’m enquiring about a business partnership.",
-        "",
-        "Business type: " + data.get("businessType"),
-        "Business name: " + (data.get("businessName") || "Not provided"),
-        "City / district: " + data.get("city"),
-        "Product interest: " + data.get("productInterest"),
-        requestedProduct ? "Product requested: " + requestedProduct : "",
-        "",
-        "Please share relevant product and business details."
-      ].filter(Boolean);
-      const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
-      if (status) status.textContent = "WhatsApp is opening with your enquiry. Review the message and press Send to contact Daiya’s.";
-      window.open(url, "_blank", "noopener,noreferrer");
-    });
-  }
+  if (form) form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    const lines = [
+      "Hello Daiya’s team, I’m enquiring about a business partnership.",
+      "",
+      "Business type: " + data.get("businessType"),
+      "Business name: " + (data.get("businessName") || "Not provided"),
+      "City / district: " + data.get("city"),
+      "Product interest: " + data.get("productInterest"),
+      requestedProduct ? "Product requested: " + requestedProduct : "",
+      "",
+      "Please share relevant product and business details."
+    ].filter(Boolean);
+    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+    if (status) status.textContent = "WhatsApp is opening with your enquiry. Review the message and press Send to contact Daiya’s.";
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
 }
