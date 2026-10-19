@@ -5,7 +5,7 @@ Responsive brand website for Daiya Agro Industries Private Limited, focused on r
 ## Stack
 - Vite
 - Tailwind CSS
-- GSAP for optional, reduced-motion-aware scroll effects
+- GSAP for optional, reduced-motion-aware reveal effects
 
 ## Local development
 ```bash
@@ -15,24 +15,23 @@ npm run build
 npm run preview
 ```
 
-## Design goals
-- Premium contemporary Indian-heritage visual direction.
-- Product overview and clear trade-enquiry path.
-- WhatsApp-first enquiry form; user reviews and sends the message themselves.
-- Mobile-first layout, keyboard focus states, skip link and reduced-motion support.
-- No cinematic loader blocking access to essential content.
+## Website goals
+- Present the Daiya’s Shubh Laxmi Bhog Kacchi Ghani Mustard Oil range.
+- Generate trade enquiries through WhatsApp and email.
+- Explain the brand and manufacturing process using verified information.
+- Keep content available if animation fails or motion is reduced.
 
 ## Before production launch
-- Replace generic sequence-frame visuals in product cards with approved photographs of each actual pack.
-- Confirm available SKUs and label/net quantity details.
+- Replace the generic sequence-frame images in product cards with approved photos of each actual pack.
+- Confirm current SKUs, pack sizes, labels and net quantities.
 - Verify product claims, nutrition declarations, FSSAI details and certification marks against current documentation.
-- Verify company address, phone, email and WhatsApp destination.
-- Test the WhatsApp enquiry flow on iOS and Android.
-- Test mobile navigation, keyboard accessibility, reduced-motion behavior, image loading and production build.
-- Review privacy wording against actual site behavior.
+- Verify company address, phone number, email and WhatsApp number.
+- Test the WhatsApp enquiry flow on mobile. The message is sent only when the user presses Send.
+- Test keyboard accessibility, reduced-motion behavior, image loading and production build.
+- Review privacy wording against actual analytics and data handling.
 
 ## Assets
-- Brand logo: `public/assets/logos/Daiyas Logo.png`
-- Existing cinematic sequence: `public/assets/frames/`
+- Logo: `public/assets/logos/Daiyas Logo.png`
+- Existing campaign sequence: `public/assets/frames/`
 
-The frame sequence is retained, but page content no longer depends on loading it. Product cards currently use temporary campaign imagery and must be updated with approved SKU photography before launch.
+The campaign sequence is a temporary visual and must not be presented as exact SKU pack photography.
