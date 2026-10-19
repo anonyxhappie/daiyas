@@ -1,38 +1,61 @@
-const legalContent = {
-    privacy: `
-        <h2 class="text-2xl text-[#D4AF37] mb-4">Privacy Policy</h2>
-        <p>At Daiya's, we value your privacy. We do not track you with invasive cookies. This site uses standard analytics to improve user experience. Any contact information shared via WhatsApp or Email is strictly used for business inquiries only and will never be sold to third parties.</p>
-    `,
-    terms: `
-        <h2 class="text-2xl text-[#D4AF37] mb-4">Terms of Service</h2>
-        <p>All content, including the "Tradition Deconstructed" animation, logos, and imagery, are the intellectual property of Daiya Agro Industries Pvt. Ltd. Unauthorized reproduction is prohibited. Product information provided is for educational and inquiry purposes.</p>
-    `
-};
+const WHATSAPP_NUMBER = "919462334899";
 
 export function initUI() {
-    const modal = document.getElementById('legalModal');
-    const content = document.getElementById('modalContent');
-    const privacyBtn = document.getElementById('btn-privacy');
-    const termsBtn = document.getElementById('btn-terms');
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("primary-nav");
+  const form = document.getElementById("business-form");
+  const status = document.getElementById("form-status");
 
-    // The close button is the button inside the legalModal div
-    // Based on HTML: <div id="legalModal"> ... <button onclick="closeModal()">Close</button> ... </div>
-    const closeBtn = modal ? modal.querySelector('button') : null;
+  const closeMenu = () => {
+    if (!toggle || !nav) return;
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+    nav.classList.remove("is-open");
+    document.body.classList.remove("menu-open");
+  };
 
-    function openModal(type) {
-        if (!modal || !content) return;
-        content.innerHTML = legalContent[type];
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-    }
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      toggle.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+      nav.classList.toggle("is-open", !expanded);
+      document.body.classList.toggle("menu-open", !expanded);
+    });
+    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  }
 
-    function closeModal() {
-        if (!modal) return;
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-    }
+  let requestedProduct = "";
+  document.querySelectorAll(".product-enquiry").forEach((link) => {
+    link.addEventListener("click", () => {
+      requestedProduct = link.dataset.product || "";
+      const select = document.getElementById("product-interest");
+      if (select) select.value = "Mustard oil";
+    });
+  });
 
-    if (privacyBtn) privacyBtn.addEventListener('click', () => openModal('privacy'));
-    if (termsBtn) termsBtn.addEventListener('click', () => openModal('terms'));
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (form) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const lines = [
+        "Hello Daiya’s team, I’m enquiring about a business partnership.",
+        "",
+        "Business type: " + data.get("businessType"),
+        "Business name: " + (data.get("businessName") || "Not provided"),
+        "City / district: " + data.get("city"),
+        "Product interest: " + data.get("productInterest"),
+        requestedProduct ? "Product requested: " + requestedProduct : "",
+        "",
+        "Please share relevant product and business details."
+      ].filter(Boolean);
+      const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+      if (status) status.textContent = "WhatsApp is opening with your enquiry. Review the message and press Send to contact Daiya’s.";
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  }
 }
