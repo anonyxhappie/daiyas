@@ -22,7 +22,7 @@ npm run preview
 - Keep content available if animation fails or motion is reduced.
 
 ## Before production launch
-- Replace the generic sequence-frame images in product cards with approved photos of each actual pack.
+- Product cards currently use original vector concept illustrations for each pack size. Replace them with approved photographs/renders of the exact commercial SKUs before launch; do not present the illustrations as final packaging photography.
 - Confirm current SKUs, pack sizes, labels and net quantities.
 - Verify product claims, nutrition declarations, FSSAI details and certification marks against current documentation.
 - Verify company address, phone number, email and WhatsApp number.
