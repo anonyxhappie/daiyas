@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 126" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Daiya’s</title>
+  <g fill="none" stroke="#1e432d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M160 42 C143 29 137 16 139 5 C153 7 163 17 163 32"/>
+    <path d="M163 40 C170 21 184 10 198 8 C198 24 183 36 163 40"/>
+    <path d="M158 41 C143 34 126 33 116 21 C131 18 148 26 158 41"/>
+    <path d="M160 39 C160 33 161 28 163 22"/>
+  </g>
+  <text x="160" y="91" text-anchor="middle" fill="#1e432d" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-style="italic" font-weight="700" letter-spacing="-2">Daiya’s</text>
+  <path d="M104 101 Q160 111 216 101" fill="none" stroke="#b98c2f" stroke-width="2" stroke-linecap="round"/>
+</svg>
