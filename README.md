@@ -22,15 +22,13 @@ The primary business flow is WhatsApp and email, not e-commerce. WhatsApp opens 
 
 ## Design asset status — required before production
 
-The following new WebP images are crops from the approved visual mockup, included to match its composition in the preview:
-- public/assets/campaign/hero-product-composition.webp
-- public/assets/products/product-packs-sprite.webp
-- public/assets/process/ghani-process.webp
-- public/assets/about/facility-concept.webp
+- `public/assets/products/pack-200ml.webp`, `pack-1l.webp`, `pack-2l.webp`, `pack-5l.webp` and `pack-15l.webp` are individual, high-resolution concept renders created from the supplied product reference artwork. The product cards load each image separately rather than cropping a sprite.
+- `public/assets/campaign/hero-product-composition.webp` and `public/assets/about/facility-concept.webp` remain concept assets for the visual preview, not approved product photography or a verified photograph of the company premises.
+- The process section uses the vector ghani illustration for crisp rendering across screen sizes.
 
-These are design-concept crops, not approved product photography or a verified photograph of the company premises. Replace the pack sprite with approved photos/renders of exact current commercial SKUs, and replace the factory concept with an actual company-approved facility photo, before production. Confirm current SKUs and net quantities with the company.
+**Before production:** replace concept pack renders with company-approved photography/renders of the exact commercial SKUs, confirm current pack sizes and labels, and replace the facility concept with an actual company-approved premises photo. Do not treat AI-generated label text or claims as verified product declarations.
 
-The original SVG campaign and pack concepts remain as supporting design assets. The redesign does not use the old watermarked cinematic frame sequence as page imagery.
+The redesign does not use the old watermarked cinematic frame sequence as page imagery.
 
 ## Pre-launch checklist
 
