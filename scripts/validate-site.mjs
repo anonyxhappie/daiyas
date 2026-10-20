@@ -26,7 +26,8 @@ const assetRefs = [];
 for (const [, raw] of html.matchAll(/\b(?:src|href)=["'](\/assets\/[^"']+)["']/g)) assetRefs.push(raw);
 for (const [, raw] of css.matchAll(/url\(["']?(\/assets\/[^)"']+)/g)) assetRefs.push(raw);
 for (const raw of new Set(assetRefs)) {
-  const localPath = path.join(root, "public", decodeURIComponent(raw.slice(1)));
+  const assetPath = decodeURIComponent(raw.slice(1)).split("?")[0].split("#")[0];
+  const localPath = path.join(root, "public", assetPath);
   if (!existsSync(localPath)) fail.push(`Missing local asset: ${raw}`);
 }
 
