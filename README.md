@@ -32,6 +32,10 @@ npm run preview
 
 ## Assets
 - Logo: `public/assets/logos/Daiyas Logo.png`
-- Existing campaign sequence: `public/assets/frames/`
+- Hero mustard-field illustration: `public/assets/campaign/hero-mustard-field.svg`
+- Mustard-flower illustration: `public/assets/campaign/mustard-flowers.svg`
+- Ghani process illustration: `public/assets/process/ghani-process.svg`
+- Five pack concept illustrations: `public/assets/products/`
+- Original cinematic frame sequence remains in `public/assets/frames/` for reference; the redesign does not use those watermarked frames as page imagery.
 
 The campaign sequence is a temporary visual and must not be presented as exact SKU pack photography.
