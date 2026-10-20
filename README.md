@@ -2,40 +2,40 @@
 
 Responsive brand website for Daiya Agro Industries Private Limited, focused on retailer, wholesaler and distributor enquiries.
 
+## Current redesign
+
+The redesign/b2b-premium-heritage branch follows the approved long-page composition: compact green navigation, photo-led mustard/product hero, five pack cards, ghani process, business partnership band, quality/transparency strip, company/contact area and footer.
+
 ## Stack
+
 - Vite
 - Tailwind CSS
 - GSAP for optional, reduced-motion-aware reveal effects
 
 ## Local development
-```bash
-npm install
-npm run dev
-npm run build
-npm run preview
-```
 
-## Website goals
-- Present the Daiya’s Shubh Laxmi Bhog Kacchi Ghani Mustard Oil range.
-- Generate trade enquiries through WhatsApp and email.
-- Explain the brand and manufacturing process using verified information.
-- Keep content available if animation fails or motion is reduced.
+Commands: npm install, npm run dev, npm run build, npm run preview.
 
-## Before production launch
-- Product cards currently use original vector concept illustrations for each pack size. Replace them with approved photographs/renders of the exact commercial SKUs before launch; do not present the illustrations as final packaging photography.
-- Confirm current SKUs, pack sizes, labels and net quantities.
-- Verify product claims, nutrition declarations, FSSAI details and certification marks against current documentation.
-- Verify company address, phone number, email and WhatsApp number.
-- Test the WhatsApp enquiry flow on mobile. The message is sent only when the user presses Send.
+## Enquiries
+
+The primary business flow is WhatsApp and email, not e-commerce. WhatsApp opens a prefilled draft; the visitor must review it and press Send. The site does not persist form submissions.
+
+## Design asset status — required before production
+
+The following new WebP images are crops from the approved visual mockup, included to match its composition in the preview:
+- public/assets/campaign/hero-product-composition.webp
+- public/assets/products/product-packs-sprite.webp
+- public/assets/process/ghani-process.webp
+- public/assets/about/facility-concept.webp
+
+These are design-concept crops, not approved product photography or a verified photograph of the company premises. Replace the pack sprite with approved photos/renders of exact current commercial SKUs, and replace the factory concept with an actual company-approved facility photo, before production. Confirm current SKUs and net quantities with the company.
+
+The original SVG campaign and pack concepts remain as supporting design assets. The redesign does not use the old watermarked cinematic frame sequence as page imagery.
+
+## Pre-launch checklist
+
+- Confirm current pack sizes, labels and SKU availability.
+- Verify every product claim, nutrition declaration, FSSAI detail and certification mark from current documentation.
+- Test WhatsApp links and enquiry behavior on mobile and desktop.
 - Test keyboard accessibility, reduced-motion behavior, image loading and production build.
-- Review privacy wording against actual analytics and data handling.
-
-## Assets
-- Logo: `public/assets/logos/Daiyas Logo.png`
-- Hero mustard-field illustration: `public/assets/campaign/hero-mustard-field.svg`
-- Mustard-flower illustration: `public/assets/campaign/mustard-flowers.svg`
-- Ghani process illustration: `public/assets/process/ghani-process.svg`
-- Five pack concept illustrations: `public/assets/products/`
-- Original cinematic frame sequence remains in `public/assets/frames/` for reference; the redesign does not use those watermarked frames as page imagery.
-
-The campaign sequence is a temporary visual and must not be presented as exact SKU pack photography.
+- Review the privacy notice against actual analytics and data handling.

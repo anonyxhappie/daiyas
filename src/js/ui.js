@@ -5,6 +5,7 @@ export function initUI() {
   const nav = document.getElementById("primary-nav");
   const form = document.getElementById("business-form");
   const status = document.getElementById("form-status");
+  const details = document.querySelector(".business-details");
 
   const closeMenu = () => {
     if (!toggle || !nav) return;
@@ -29,9 +30,10 @@ export function initUI() {
   }
 
   let requestedProduct = "";
-  document.querySelectorAll(".product-enquiry").forEach((link) => {
+  document.querySelectorAll("[data-product]").forEach((link) => {
     link.addEventListener("click", () => {
       requestedProduct = link.dataset.product || "";
+      if (details) details.open = true;
     });
   });
 
