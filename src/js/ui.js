@@ -5,7 +5,8 @@ export function initUI() {
   const nav = document.getElementById("primary-nav");
   const form = document.getElementById("business-form");
   const status = document.getElementById("form-status");
-  const details = document.querySelector(".business-details");
+  const details = document.getElementById("business-details");
+  const enquiryToggleBtn = document.getElementById("enquiry-toggle-btn");
 
   const closeMenu = () => {
     if (!toggle || !nav) return;
@@ -29,11 +30,23 @@ export function initUI() {
     });
   }
 
+  if (enquiryToggleBtn && details) {
+    enquiryToggleBtn.addEventListener("click", () => {
+      details.open = !details.open;
+      if (details.open) {
+        details.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    });
+  }
+
   let requestedProduct = "";
   document.querySelectorAll("[data-product]").forEach((link) => {
     link.addEventListener("click", () => {
       requestedProduct = link.dataset.product || "";
-      if (details) details.open = true;
+      if (details) {
+        details.open = true;
+        details.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
     });
   });
 
