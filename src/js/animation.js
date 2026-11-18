@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Motion is progressive enhancement. Main content no longer waits for image frames.
 export function initAnimation() {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const items = document.querySelectorAll(".product-card, .process-copy, .partner-points > div, .trust-items > div");
+  const items = document.querySelectorAll(".product-card, .variety-card, .pillar-card, .process-copy, .partner-points > div, .trust-items > div");
   items.forEach((element) => {
     gsap.fromTo(element, { y: 14, opacity: 0.01 }, {
       y: 0,

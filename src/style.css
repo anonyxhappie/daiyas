@@ -263,6 +263,13 @@ a.button-gold:hover,
   font-style: normal;
   color: #152212;
 }
+.hero-tagline-hindi {
+  font-size: clamp(0.92rem, 1.5vw, 1.15rem);
+  font-weight: 600;
+  color: var(--gold-dark);
+  margin: 8px 0 2px;
+  letter-spacing: 0.02em;
+}
 .hero-copy {
   max-width: 500px;
   font-size: 0.86rem;
@@ -339,6 +346,116 @@ a.button-gold:hover,
 .text-link:hover {
   color: var(--gold-dark);
   border-color: currentColor;
+}
+
+/* ─── Oil Varieties Grid ─── */
+.variety-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+.variety-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--cream-card);
+  padding: 16px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+.variety-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(34, 52, 34, 0.08);
+  border-color: #cfc4a6;
+}
+.variety-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--green);
+  background: rgba(32, 60, 44, 0.08);
+  padding: 3px 7px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.variety-card h3 {
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.25;
+}
+.hindi-name {
+  font-size: 0.74rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin: 2px 0 8px;
+  display: block;
+}
+.variety-desc {
+  font-size: 0.7rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 12px;
+  flex: 1;
+}
+.variety-meta {
+  margin-bottom: 12px;
+}
+.meta-tag {
+  font-size: 0.66rem;
+  color: #2b3b2e;
+  background: #eee6d0;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+}
+.variety-actions {
+  display: grid;
+  grid-template-columns: 1fr 34px;
+  gap: 6px;
+  margin-top: auto;
+}
+.button-gold-outline {
+  border: 1px solid #b7831e;
+  color: #121c14;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.68rem;
+  min-height: 32px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.button-gold-outline:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.pack-heading {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #121c14;
+  margin: 10px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pack-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
 }
 
 .product-grid {
@@ -521,6 +638,124 @@ a.button-gold:hover,
   flex: 0 0 auto;
 }
 .process-copy > .button { min-height: 36px; }
+
+/* ─── Brand Showcase Section ─── */
+.brand-showcase-section {
+  padding: 44px 0;
+  background: linear-gradient(135deg, #14291d 0%, #1e392a 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.brand-showcase-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 40%, rgba(240, 202, 98, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.brand-showcase-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+}
+.brand-showcase-visual {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.brand-showcase-visual img {
+  border: none;
+  border-radius: 18px;
+  box-shadow: none;
+  max-width: 440px;
+  width: 100%;
+  height: auto;
+  -webkit-mask-image: radial-gradient(ellipse 96% 96% at 50% 50%, #000 80%, transparent 100%);
+  mask-image: radial-gradient(ellipse 96% 96% at 50% 50%, #000 80%, transparent 100%);
+  transition: transform 0.3s ease;
+}
+.brand-showcase-visual:hover img {
+  transform: scale(1.02);
+}
+.brand-showcase-content .badge-wood-pressed {
+  display: inline-block;
+  font-size: 0.64rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  background: rgba(240, 202, 98, 0.15);
+  border: 1px solid rgba(240, 202, 98, 0.3);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.brand-showcase-content h2.hindi-title {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  color: #ffffff;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+.showcase-tagline-hindi {
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+.showcase-desc {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.6;
+  margin: 0 0 20px;
+  max-width: 580px;
+}
+.showcase-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.pillar-card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+.pillar-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(240, 202, 98, 0.22);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.pillar-text strong {
+  display: block;
+  font-size: 0.78rem;
+  color: #fff;
+  margin-bottom: 1px;
+}
+.pillar-text span {
+  display: block;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+.showcase-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 
 /* ─── Partnership Section ─── */
 .partnership-section {
@@ -898,8 +1133,9 @@ a.button-gold:hover,
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 }
-.social-icons a {
+.social-icons a:not(.insta-handle-pill) {
   display: grid;
   place-items: center;
   width: 34px;
@@ -909,7 +1145,7 @@ a.button-gold:hover,
   border-radius: 50%;
   transition: all 0.2s ease;
 }
-.social-icons a:hover {
+.social-icons a:not(.insta-handle-pill):hover {
   border-color: var(--gold);
   background: rgba(240, 202, 98, 0.18);
   transform: translateY(-2px);
@@ -919,6 +1155,26 @@ a.button-gold:hover,
   width: 17px;
   height: 17px;
   display: block;
+}
+.social-icons .insta-handle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 20px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.social-icons .insta-handle-pill:hover {
+  border-color: var(--gold);
+  background: rgba(240, 202, 98, 0.2);
+  color: var(--gold);
+  transform: translateY(-2px);
 }
 .footer-wa-btn {
   min-height: 38px;
@@ -979,6 +1235,9 @@ a.button-gold:hover,
   .nav-cta { font-size: 0.7rem; padding: 7px 12px; }
   .hero { min-height: 380px; }
   .hero h1 { font-size: clamp(2rem, 4.4vw, 3rem); }
+  .variety-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brand-showcase-grid { grid-template-columns: 1fr; gap: 28px; }
+  .brand-showcase-visual img { max-width: 380px; }
   .product-grid { gap: 10px; }
   .product-visual { height: 155px; }
   .process-section { grid-template-columns: 0.8fr 1.2fr; }
@@ -1071,6 +1330,11 @@ a.button-gold:hover,
 
   .products-section { padding: 26px 0 20px; }
   .heading-row { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .variety-grid { grid-template-columns: 1fr; gap: 12px; }
+  .brand-showcase-section { padding: 28px 0; }
+  .brand-showcase-grid { gap: 20px; }
+  .brand-showcase-visual img { max-width: 280px; }
+  .showcase-pillars { grid-template-columns: 1fr; gap: 8px; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .product-card:last-child { grid-column: span 2; }
   .product-card:last-child .product-visual { height: 165px; }
